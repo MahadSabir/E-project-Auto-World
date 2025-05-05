@@ -1,0 +1,43 @@
+
+body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+ 
+  h1 {
+    font-weight: 900;
+  }
+  
+  h2 {
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-weight: 600;
+  }
+  
+  p {
+    font-weight: 400;
+  }
+  
+
+  .quote, .subtitle {
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+
+
+
+body, p, h1, h2, h3, h4, h5, h6, a, span, div {
+    font-family: "Playfair Display", serif !important;
+    font-weight: 400; /* Normal weight for better readability */
+    font-style: normal;
+    font-optical-sizing: auto;
+    line-height: 1.6;
+  }
+  
