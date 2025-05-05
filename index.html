@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoWorld Transparent Layout</title>
-  <!-- Bootstrap 5 CSS (without JS) -->
+  <title>AutoWorld</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     * {
@@ -31,7 +30,7 @@
       filter: brightness(0.6); /* Optional: dim the video */
     }
 
-    /* Transparent Navbar (Bootstrap) */
+    /* Transparent Navbar*/
     .navbar {
       position: fixed;
       top: 0;
@@ -54,7 +53,7 @@
       color: #EF4444 !important;
     }
 
-    /* Hero Center Content */
+    /* Hero*/
     .hero {
       height: 100vh;
       display: flex;
@@ -87,7 +86,7 @@
       color: #000;
     }
 
-    /* Transparent Footer (Bootstrap) */
+    /* Transparent Footer*/
     footer {
       position: fixed;
       bottom: 0;
@@ -107,42 +106,57 @@
 
   <!-- Video Background -->
   <video autoplay muted loop playsinline>
-    <source src="main.mp4" type="video/mp4"> <!-- Default video -->
+    <source src="main.mp4" type="video/mp4"> 
     Your browser does not support the video tag.
   </video>
 
-  <!-- Transparent Navbar (Bootstrap) -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">AutoWorld</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Brands</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Dealers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Compare</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Finance</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+ <!-- Transparent Navbar  -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">AutoWorld</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
-  <!-- Hero Content -->
+        <!-- Transparent Dropdown for Brands -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Brands
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="brandsDropdown"
+            style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); border: none;">
+            <li><a class="dropdown-item text-white" href="#">Porsche</a></li>
+            <li><a class="dropdown-item text-white" href="#">BMW</a></li>
+            <li><a class="dropdown-item text-white" href="#">Audi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#">Dealers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero-->
   <div class="hero">
     <h1>Drive the Future</h1>
     <button class="btn">Explore Now</button>
   </div>
 
-  <!-- Transparent Footer (Bootstrap) -->
   <footer>
     &copy; 2025 AutoWorld. All rights reserved.
   </footer>
 
-  <!-- Bootstrap 5 JS Bundle (only for responsive navbar toggle, no JS needed for video change) -->
+  <!--  JS (only for responsive navbar toggle)-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

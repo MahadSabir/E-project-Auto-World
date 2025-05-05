@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compare Cars - AutoWorld</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      padding-top: 40px;
+    }
+
+    header {
+      background: #7F1D1D;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #f3f4f6;
+      opacity: 0.9;
+    }
+
+    .subtext {
+      text-align: center;
+      color: #6b7280;
+      font-size: 1rem;
+      margin-bottom: 50px;
+      padding: 0 20px;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    select.form-select:focus {
+      border-color: #7F1D1D;
+      box-shadow: 0 0 0 0.2rem rgba(127, 29, 29, 0.25);
+    }
+
+    .comparison-section {
+      margin-bottom: 60px;
+    }
+
+    .comparison-card {
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      height: 100%;
+    }
+
+    .comparison-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      border-color: #7F1D1D;
+    }
+
+    .comparison-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .comparison-card h3 {
+      font-weight: 600;
+      color: #7F1D1D;
+      font-size: 1.4rem;
+    }
+
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .comparison-card ul li {
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-card {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <h1>Compare Your Dream Cars</h1>
+    <p>Use our advanced tool to compare specs, performance, and features across top models.</p>
+  </header>
+
+  <div class="subtext">Choose a brand and model to begin your comparison journey.</div>
+
+  <div class="container comparison-section">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <label class="form-label">Select Brand 1</label>
+        <select id="brand1" class="form-select">
+          <option value="">Select a brand</option>
+          <option value="audi">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="porsche">Porsche</option>
+        </select>
+
+        <label class="form-label mt-3">Select Car 1</label>
+        <select id="car1" class="form-select"></select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Select Brand 2</label>
+        <select id="brand2" class="form-select">
+          <option value="">Select a brand</option>
+          <option value="audi">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="porsche">Porsche</option>
+        </select>
+
+        <label class="form-label mt-3">Select Car 2</label>
+        <select id="car2" class="form-select"></select>
+      </div>
+    </div>
+
+    <div class="row" id="comparisonResult"></div>
+  </div>
+
+  <!-- Car data -->
+  <script>
+    const carData = {
+      audi: [
+        { name: 'Audi A4', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Audi_A4_B9_Limousine_IMG_0334.jpg/640px-Audi_A4_B9_Limousine_IMG_0334.jpg', price: '$40,000', engine: '2.0L Turbo', horsepower: '201 HP', fuel: 'Gasoline' },
+        { name: 'Audi A6', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Audi_A6_Limousine_TDI_quattro_3.0_front.jpg', price: '$55,000', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
+        { name: 'Audi Q5', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Audi_Q5_45_TFSI_quattro_S_line_%28II%2C_Facelift%29_%E2%80%93_f_27082021.jpg/640px-Audi_Q5_45_TFSI_quattro_S_line_%28II%2C_Facelift%29_%E2%80%93_f_27082021.jpg', price: '$43,000', engine: '2.0L Turbo', horsepower: '261 HP', fuel: 'Gasoline' },
+        { name: 'Audi Q7', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Audi_Q7_IMG_0377.jpg/640px-Audi_Q7_IMG_0377.jpg', price: '$60,000', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
+        { name: 'Audi e-tron', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/2019_Audi_e-tron_55_Quattro_300kW.jpg/640px-2019_Audi_e-tron_55_Quattro_300kW.jpg', price: '$65,000', engine: 'Electric', horsepower: '355 HP', fuel: 'Electric' },
+        { name: 'Audi RS7', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Audi_RS7_C8_IMG_3382.jpg/640px-Audi_RS7_C8_IMG_3382.jpg', price: '$120,000', engine: '4.0L V8', horsepower: '591 HP', fuel: 'Gasoline' }
+      ],
+      bmw: [
+        { name: 'BMW 3 Series', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/BMW_G20_IMG_2719.jpg/640px-BMW_G20_IMG_2719.jpg', price: '$42,000', engine: '2.0L Turbo', horsepower: '255 HP', fuel: 'Gasoline' },
+        { name: 'BMW 5 Series', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/BMW_G30_IMG_2572.jpg/640px-BMW_G30_IMG_2572.jpg', price: '$55,000', engine: '2.0L/3.0L', horsepower: '248-335 HP', fuel: 'Gasoline' },
+        { name: 'BMW X3', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/BMW_G01_IMG_3434.jpg/640px-BMW_G01_IMG_3434.jpg', price: '$45,000', engine: '2.0L Turbo', horsepower: '248 HP', fuel: 'Gasoline' },
+        { name: 'BMW X5', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/BMW_X5_xDrive30d_M_Sport_Paket_%28G05%29_%E2%80%93_f_24042022.jpg/640px-BMW_X5_xDrive30d_M_Sport_Paket_%28G05%29_%E2%80%93_f_24042022.jpg', price: '$61,000', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
+        { name: 'BMW i4', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/BMW_i4_IMG_5295.jpg/640px-BMW_i4_IMG_5295.jpg', price: '$52,000', engine: 'Electric', horsepower: '335 HP', fuel: 'Electric' },
+        { name: 'BMW M5', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/BMW_F90_IMG_4406.jpg/640px-BMW_F90_IMG_4406.jpg', price: '$110,000', engine: '4.4L V8', horsepower: '600 HP', fuel: 'Gasoline' }
+      ],
+      porsche: [
+        { name: 'Porsche Macan', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Porsche_Macan_GTS_Genf_2019_1Y7A5695.jpg/640px-Porsche_Macan_GTS_Genf_2019_1Y7A5695.jpg', price: '$57,000', engine: '2.0L Turbo', horsepower: '261 HP', fuel: 'Gasoline' },
+        { name: 'Porsche Cayenne', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/2018_Porsche_Cayenne_Turbo_4.0.jpg/640px-2018_Porsche_Cayenne_Turbo_4.0.jpg', price: '$67,000', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
+        { name: 'Porsche Panamera', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/2017_Porsche_Panamera_4S_V6_2.9_Front.jpg/640px-2017_Porsche_Panamera_4S_V6_2.9_Front.jpg', price: '$88,000', engine: '2.9L V6', horsepower: '325 HP', fuel: 'Gasoline' },
+        { name: 'Porsche 911', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Porsche_911_Carrera_S_%28992%29_IMG_4371.jpg/640px-Porsche_911_Carrera_S_%28992%29_IMG_4371.jpg', price: '$114,000', engine: '3.0L Twin Turbo', horsepower: '379 HP', fuel: 'Gasoline' },
+        { name: 'Porsche Taycan', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Porsche_Taycan_IMG_4032.jpg/640px-Porsche_Taycan_IMG_4032.jpg', price: '$90,000', engine: 'Electric', horsepower: '402 HP', fuel: 'Electric' },
+        { name: 'Porsche 718 Cayman', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2018_Porsche_718_Cayman_PDK_2.0.jpg/640px-2018_Porsche_718_Cayman_PDK_2.0.jpg', price: '$63,000', engine: '2.0L Turbo', horsepower: '300 HP', fuel: 'Gasoline' }
+      ]
+    };
+
+    function updateModels(brandSelectId, carSelectId) {
+      const brand = $(`#${brandSelectId}`).val();
+      const models = carData[brand] || [];
+      const $carSelect = $(`#${carSelectId}`);
+      $carSelect.empty().append('<option value="">Select a model</option>');
+      models.forEach((car, i) => {
+        $carSelect.append(`<option value="${i}">${car.name}</option>`);
+      });
+    }
+
+    function displayComparison() {
+      const brand1 = $('#brand1').val();
+      const car1Index = $('#car1').val();
+      const brand2 = $('#brand2').val();
+      const car2Index = $('#car2').val();
+
+      const car1 = carData[brand1]?.[car1Index];
+      const car2 = carData[brand2]?.[car2Index];
+
+      let output = '';
+
+      if (car1 && car2) {
+        output = `
+          <div class="col-md-6">
+            <div class="comparison-card">
+              <img src="${car1.image}" alt="${car1.name}">
+              <h3>${car1.name}</h3>
+              <ul>
+                <li><strong>Price:</strong> ${car1.price}</li>
+                <li><strong>Engine:</strong> ${car1.engine}</li>
+                <li><strong>Horsepower:</strong> ${car1.horsepower}</li>
+                <li><strong>Fuel Type:</strong> ${car1.fuel}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="comparison-card">
+              <img src="${car2.image}" alt="${car2.name}">
+              <h3>${car2.name}</h3>
+              <ul>
+                <li><strong>Price:</strong> ${car2.price}</li>
+                <li><strong>Engine:</strong> ${car2.engine}</li>
+                <li><strong>Horsepower:</strong> ${car2.horsepower}</li>
+                <li><strong>Fuel Type:</strong> ${car2.fuel}</li>
+              </ul>
+            </div>
+          </div>`;
+      }
+
+      $('#comparisonResult').html(output);
+    }
+
+    $(document).ready(function () {
+      $('#brand1').change(() => updateModels('brand1', 'car1'));
+      $('#brand2').change(() => updateModels('brand2', 'car2'));
+      $('#car1, #car2').change(displayComparison);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - AutoWorld</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+    
+    }
+
+    .navbar, footer {
+      background-color: #000000;
+    }
+
+    .navbar .nav-link,
+    .navbar .navbar-brand,
+    footer {
+      color: white !important;
+    }
+
+    .navbar .nav-link:hover {
+      color: #EF4444 !important;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+    }
+
+    .about-text {
+      flex: 1 1 50%;
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-image {
+      flex: 1 1 40%;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand-overview {
+      padding: 60px 10%;
+      background-color: #f9f9f9;
+    }
+
+    .brand {
+      margin-bottom: 60px;
+    }
+
+    .brand h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .brand p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .brand img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .compare-section {
+      padding: 60px 10%;
+      background-color: #f5f5f5;
+    }
+
+    .compare-section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .compare-section p {
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .compare-section .btn {
+      background-color: #000;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .compare-section .btn:hover {
+      background-color: #EF4444;
+    }
+
+    .text-shadow {
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+.card-custom {
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+    .card-custom:hover {
+      transform: translateY(-5px);
+    }
+    .car-image {
+      width: 100%;
+      height: auto;
+    }
+    .stat {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .stat-label {
+      color: #6c757d;
+      font-size: 0.875rem;
+    }
+
+.carousel-caption::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">AutoWorld</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Brands
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="brandsDropdown"
+              style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); border: none;">
+              <li><a class="dropdown-item text-white" href="#">Porsche</a></li>
+              <li><a class="dropdown-item text-white" href="#">BMW</a></li>
+              <li><a class="dropdown-item text-white" href="#">Audi</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Dealers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Finance</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Hero Carousel Section -->
+<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="pic 2.jpg" class="d-block w-100" style="height: 100vh; object-fit: cover;" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block text-shadow">
+          <h2 class="display-4 fw-bold">About AutoWorld</h2>
+          <p class="lead">
+            AutoWorld is your gateway to the world of luxury and performance. We specialize in showcasing
+            premium vehicles from top-tier brands including Porsche, BMW, and Audi.
+          </p>
+          <p>
+            Whether you're a car enthusiast or a buyer looking for the perfect match, AutoWorld brings you
+            closer to the car of your dreams — all from the comfort of your screen.
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="pic 1.jpg" class="d-block w-100" style="height: 100vh; object-fit: cover;" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block text-shadow">
+          <h2 class="display-4 fw-bold">Luxury. Performance. Precision.</h2>
+          <p class="lead">Explore top models, compare features, and choose your dream car — only at AutoWorld.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </section>
+  
+  
+  
+  <section class="brands-section py-5 text-center">
+    <div class="container">
+      <h2 class="display-4 mb-4">Explore Our Featured Brands</h2>
+      <p class="lead">
+        AutoWorld showcases a curated selection of world-renowned car brands, each offering a range of luxury and performance models. Here’s a look at the brands and the detailed car specifications available on our platform:
+      </p>
+
+  <section class="brand-overview">
+    <div class="brand">
+      <h3>Audi </h3>
+      <img src="audi.jpg" alt="Audi Image">
+      <p>Audi is renowned for its cutting-edge technology, precise German engineering, and luxurious interiors. Audi models strike a balance between style, innovation, and dynamic driving experience.</p>
+      <p><strong>Top Models:</strong><br>
+      Audi A6 & Audi Q7</p>
+    </div>
+
+    <div class="brand">
+      <h3>BMW </h3>
+      <img src="bmw.jpg" alt="BMW Image">
+      <p>BMW stands for performance and driving pleasure. Known for its powerful engines, elegant design, and sporty handling, BMW delivers sheer driving excitement with every model.</p>
+      <p><strong>Top Models:</strong><br>
+      BMW 5 Series & BMW X5</p>
+    </div>
+
+    <div class="brand">
+      <h3>Porsche</h3>
+      <img src="porsche.jpg" alt="Porsche Image">
+      <p>Porsche blends racing heritage with modern luxury. Every Porsche car embodies speed, precision, and status — from legendary 911s to the powerful Cayenne SUV.</p>
+      <h4><strong>Top Models:</strong></h4><br>
+     <p>Porsche 911 & Porsche Macan</p>
+     <div class="col-md-6 col-lg-4">
+      <div class="card card-custom bg-white">
+        <div class="mb-2">
+          <span class="badge bg-light text-dark">Gasoline</span>
+        </div>
+        <img src="https://files.porsche.com/filestore/image/multimedia/none/992-c2-modelimage-sideshot/model/6f3e0b09-48e1-11ec-80e5-005056bbdc38/porsche-model.png" alt="911 Carrera" class="car-image mb-3">
+        <h5 class="fw-bold">911 Carrera</h5>
+        <div class="d-flex justify-content-between mb-3">
+          <div><div class="stat">3.9 s</div><div class="stat-label">0 - 60 mph</div></div>
+          <div><div class="stat">388 hp</div><div class="stat-label">Max. engine power</div></div>
+          <div><div class="stat">183 mph</div><div class="stat-label">Top speed</div></div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+
+    
+  </section>
+
+  <section class="compare-section text-center">
+    <h3>Compare Your Dream Cars</h3>
+    <p>Use our advanced comparison tool to evaluate models side by side and discover which one fits your lifestyle, budget, and passion best.</p>
+    <a href="compare.html" class="btn">Start Comparing</a>
+  </section>
+
+  <footer>
+    &copy; 2025 AutoWorld. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
