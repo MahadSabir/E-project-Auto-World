@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="font.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="scroll.js"></script>
+
   <style>
     body {
       background-color: #ffffff;
@@ -114,7 +117,8 @@
     }
 
     .compare-section .btn:hover {
-      background-color: #EF4444;
+      background-color: white;
+      color: black;
     }
 
     .text-shadow {
@@ -195,6 +199,12 @@
       </div>
     </div>
   </nav>
+
+<!-- loader -->
+  <div class="loader-wrapper" id="loader">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
 
  <!-- Hero Carousel Section -->
 <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
