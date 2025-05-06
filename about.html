@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - AutoWorld</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="font.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="scroll.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="font.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scroll.js"></script>
 
   <style>
     body {
       background-color: #ffffff;
       font-family: 'Segoe UI', sans-serif;
-    
+
     }
 
-    .navbar, footer {
+    .navbar,
+    footer {
       background-color: #000000;
     }
 
@@ -122,43 +125,51 @@
     }
 
     .text-shadow {
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-}
-.card-custom {
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-custom {
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 20px;
       transition: transform 0.2s;
     }
+
     .card-custom:hover {
       transform: translateY(-5px);
     }
+
     .car-image {
       width: 100%;
       height: auto;
     }
+
     .stat {
       font-weight: bold;
       font-size: 1.1rem;
     }
+
     .stat-label {
       color: #6c757d;
       font-size: 0.875rem;
     }
 
-.carousel-caption::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: -1;
-}
+    .carousel-caption::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      /* Dark overlay */
+      z-index: -1;
+    }
 
-.carousel-caption h5,
-.carousel-caption p {
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
+    .carousel-caption h5,
+    .carousel-caption p {
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
 
     footer {
       text-align: center;
@@ -167,14 +178,14 @@
     }
   </style>
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">AutoWorld</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html"><img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 70px; width: 70px; margin-left: 30px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -182,7 +193,8 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Brands
             </a>
             <ul class="dropdown-menu" aria-labelledby="brandsDropdown"
@@ -200,16 +212,17 @@
     </div>
   </nav>
 
-<!-- loader -->
+  <!-- loader -->
   <div class="loader-wrapper" id="loader">
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
 
 
- <!-- Hero Carousel Section -->
-<section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Hero Carousel Section -->
+  <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
     <div class="carousel-inner">
@@ -244,69 +257,254 @@
       <span class="visually-hidden">Next</span>
     </button>
   </section>
-  
-  
-  
+
+
+
   <section class="brands-section py-5 text-center">
     <div class="container">
       <h2 class="display-4 mb-4">Explore Our Featured Brands</h2>
       <p class="lead">
-        AutoWorld showcases a curated selection of world-renowned car brands, each offering a range of luxury and performance models. Here’s a look at the brands and the detailed car specifications available on our platform:
+        AutoWorld showcases a curated selection of world-renowned car brands, each offering a range of luxury and
+        performance models. Here’s a look at the brands and the detailed car specifications available on our platform:
       </p>
 
-  <section class="brand-overview">
-    <div class="brand">
-      <h3>Audi </h3>
-      <img src="audi.jpg" alt="Audi Image">
-      <p>Audi is renowned for its cutting-edge technology, precise German engineering, and luxurious interiors. Audi models strike a balance between style, innovation, and dynamic driving experience.</p>
-      <p><strong>Top Models:</strong><br>
-      Audi A6 & Audi Q7</p>
-    </div>
+      <section class="brand-overview">
+        <div class="brand">
+          <h3>Audi </h3>
+          <img src="audi.jpg" alt="Audi Image">
+          <p>Audi is renowned for its cutting-edge technology, precise German engineering, and luxurious interiors. Audi
+            models strike a balance between style, innovation, and dynamic driving experience.</p>
+          <p><strong>Top Models:</strong><br>
+            Audi A6 and Audi Q7</p>
+          <!-- Product Card -->
 
-    <div class="brand">
-      <h3>BMW </h3>
-      <img src="bmw.jpg" alt="BMW Image">
-      <p>BMW stands for performance and driving pleasure. Known for its powerful engines, elegant design, and sporty handling, BMW delivers sheer driving excitement with every model.</p>
-      <p><strong>Top Models:</strong><br>
-      BMW 5 Series & BMW X5</p>
-    </div>
+          <div class="row g-4">
 
-    <div class="brand">
-      <h3>Porsche</h3>
-      <img src="porsche.jpg" alt="Porsche Image">
-      <p>Porsche blends racing heritage with modern luxury. Every Porsche car embodies speed, precision, and status — from legendary 911s to the powerful Cayenne SUV.</p>
-      <h4><strong>Top Models:</strong></h4><br>
-     <p>Porsche 911 & Porsche Macan</p>
-     <div class="col-md-6 col-lg-4">
-      <div class="card card-custom bg-white">
-        <div class="mb-2">
-          <span class="badge bg-light text-dark">Gasoline</span>
-        </div>
-        <img src="https://files.porsche.com/filestore/image/multimedia/none/992-c2-modelimage-sideshot/model/6f3e0b09-48e1-11ec-80e5-005056bbdc38/porsche-model.png" alt="911 Carrera" class="car-image mb-3">
-        <h5 class="fw-bold">911 Carrera</h5>
-        <div class="d-flex justify-content-between mb-3">
-          <div><div class="stat">3.9 s</div><div class="stat-label">0 - 60 mph</div></div>
-          <div><div class="stat">388 hp</div><div class="stat-label">Max. engine power</div></div>
-          <div><div class="stat">183 mph</div><div class="stat-label">Top speed</div></div>
-        </div>
-      </div>
-      
-    </div>
-    </div>
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-6">
+              <div class="card card-custom bg-white">
+                <div class="mb-2">
+                  <span class="badge bg-light text-dark">Mild Hybrid</span>
+                </div>
+                <img
+                  src="https://imgd.aeplcdn.com/664x374/n/cw/ec/39472/a6-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80"
+                  alt="911 Carrera" class="car-image mb-3">
+                <h5 class="fw-bold">Audi A6</h5>
+                <p class="text-muted mb-3">From $58,395</p>
+                <div class="d-flex justify-content-between mb-3">
+                  <div>
+                    <div class="stat">5.1 s</div>
+                    <div class="stat-label">0 - 60 mph</div>
+                  </div>
+                  <div>
+                    <div class="stat">621 hp</div>
+                    <div class="stat-label">Max. engine power</div>
+                  </div>
+                  <div>
+                    <div class="stat">200 mph</div>
+                    <div class="stat-label">Top speed</div>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-dark w-100">View Models</a>
+              </div>
+            </div>
 
-    
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-6">
+              <div class="card card-custom bg-white">
+                <div class="mb-2">
+                  <span class="badge bg-light text-dark">Gasoline</span>
+                </div>
+                <img
+                  src="https://imgd.aeplcdn.com/664x374/n/cw/ec/192279/q7-exterior-right-front-three-quarter.jpeg?isig=0&q=80"
+                  alt="Taycan" class="car-image mb-3">
+                <h5 class="fw-bold">Audi Q7</h5>
+                <p class="text-muted mb-3">From $59,500</p>
+                <div class="d-flex justify-content-between mb-3">
+                  <div>
+                    <div class="stat">6.7 s</div>
+                    <div class="stat-label">0 - 60 mph</div>
+                  </div>
+                  <div>
+                    <div class="stat">500 hp</div>
+                    <div class="stat-label">Max. engine power</div>
+                  </div>
+                  <div>
+                    <div class="stat">155 mph</div>
+                    <div class="stat-label">Top speed</div>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-dark w-100">View Models</a>
+              </div>
+            </div>
+          </div>
+
+
+          <br>
+
+          <div class="brand">
+            <h3>BMW </h3>
+            <img src="bmw.jpg" alt="BMW Image">
+            <p>BMW stands for performance and driving pleasure. Known for its powerful engines, elegant design, and
+              sporty
+              handling, BMW delivers sheer driving excitement with every model.</p>
+            <p><strong>Top Models:</strong><br>
+              BMW 5 Series and BMW X5</p>
+            <!-- Product -->
+
+            <div class="row g-4">
+
+              <!-- Card 1 -->
+              <div class="col-md-6 col-lg-6">
+                <div class="card card-custom bg-white">
+                  <div class="mb-2">
+                    <span class="badge bg-light text-dark">Gasoline</span>
+                  </div>
+                  <img
+                    src="Bmw 5 Series.jpg"
+                    alt="911 Carrera" class="car-image mb-3">
+                  <h5 class="fw-bold">Bmw 5 series</h5>
+                  <p class="text-muted mb-3">From $57,900</p>
+                  <div class="d-flex justify-content-between mb-3">
+                    <div>
+                      <div class="stat">5.9 s</div>
+                      <div class="stat-label">0 - 60 mph</div>
+                    </div>
+                    <div>
+                      <div class="stat">727 hp</div>
+                      <div class="stat-label">Max. engine power</div>
+                    </div>
+                    <div>
+                      <div class="stat">190 mph</div>
+                      <div class="stat-label">Top speed</div>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-dark w-100">View Models</a>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-md-6 col-lg-6">
+                <div class="card card-custom bg-white">
+                  <div class="mb-2">
+                    <span class="badge bg-light text-dark">Gasoline</span>
+                  </div>
+                  <img
+                    src="https://imgd.aeplcdn.com/370x208/n/cw/ec/152681/x5-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80"
+                    alt="Taycan" class="car-image mb-3">
+                  <h5 class="fw-bold">BMW X5</h5>
+                  <p class="text-muted mb-3">From $67,500</p>
+                  <div class="d-flex justify-content-between mb-3">
+                    <div>
+                      <div class="stat">4.2 s</div>
+                      <div class="stat-label">0 - 60 mph</div>
+                    </div>
+                    <div>
+                      <div class="stat">523 hp</div>
+                      <div class="stat-label">Max. engine power</div>
+                    </div>
+                    <div>
+                      <div class="stat">155 mph</div>
+                      <div class="stat-label">Top speed</div>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-dark w-100">View Models</a>
+                </div>
+              </div>
+            </div>
+            <br>
+
+            <div class="brand">
+              <h3>Porsche</h3>
+              <img src="porsche.jpg" alt="Porsche Image">
+              <p>Porsche blends racing heritage with modern luxury. Every Porsche car embodies speed, precision, and
+                status
+                — from legendary 911s to the powerful Cayenne SUV.</p>
+              <h4><strong>Top Models:</strong></h4><br>
+              <p>Porsche 911 and Porsche Macan</p>
+              <!-- Product Card -->
+
+              <div class="row g-4">
+
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-6">
+                  <div class="card card-custom bg-white">
+                    <div class="mb-2">
+                      <span class="badge bg-light text-dark">Gasoline</span>
+                    </div>
+                    <img
+                      src="https://imgd.aeplcdn.com/664x374/n/cw/ec/39232/911-exterior-right-front-three-quarter-154382.jpeg?isig=0&wm=1&q=80.png"
+                      alt="911 Carrera" class="car-image mb-3">
+                    <h5 class="fw-bold">911</h5>
+                    <p class="text-muted mb-3">From $127,700</p>
+                    <div class="d-flex justify-content-between mb-3">
+                      <div>
+                        <div class="stat">3.9 s</div>
+                        <div class="stat-label">0 - 60 mph</div>
+                      </div>
+                      <div>
+                        <div class="stat">388 hp</div>
+                        <div class="stat-label">Max. engine power</div>
+                      </div>
+                      <div>
+                        <div class="stat">183 mph</div>
+                        <div class="stat-label">Top speed</div>
+                      </div>
+                    </div>
+                    <a href="#" class="btn btn-dark w-100">View Models</a>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-6">
+                  <div class="card card-custom bg-white">
+                    <div class="mb-2">
+                      <span class="badge bg-light text-dark">Gasoline</span>
+                    </div>
+                    <img
+                      src="https://imgd.aeplcdn.com/664x374/n/cw/ec/99421/macan-exterior-right-front-three-quarter-9.jpeg?isig=0&q=80"
+                      alt="Taycan" class="car-image mb-3">
+                    <h5 class="fw-bold">Macan</h5>
+                    <p class="text-muted mb-3">From $86,800</p>
+                    <div class="d-flex justify-content-between mb-3">
+                      <div>
+                        <div class="stat">3.6 s</div>
+                        <div class="stat-label">0 - 60 mph</div>
+                      </div>
+                      <div>
+                        <div class="stat">434 hp</div>
+                        <div class="stat-label">Max. engine power</div>
+                      </div>
+                      <div>
+                        <div class="stat">169 mph</div>
+                        <div class="stat-label">Top speed</div>
+                      </div>
+                    </div>
+                    <a href="#" class="btn btn-dark w-100">View Models</a>
+                  </div>
+                </div>
+
+
+
+
+      </section>
+
+      <section class="compare-section text-center">
+        <h3>Compare Your Dream Cars</h3>
+        <p>Use our advanced comparison tool to evaluate models side by side and discover which one fits your lifestyle,
+          budget, and passion best.</p>
+        <a href="compare.html" class="btn">Start Comparing</a>
+      </section>
   </section>
 
-  <section class="compare-section text-center">
-    <h3>Compare Your Dream Cars</h3>
-    <p>Use our advanced comparison tool to evaluate models side by side and discover which one fits your lifestyle, budget, and passion best.</p>
-    <a href="compare.html" class="btn">Start Comparing</a>
-  </section>
 
-  <footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <footer style="width: 100%;">
     &copy; 2025 AutoWorld. All rights reserved.
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
