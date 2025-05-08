@@ -35,7 +35,21 @@
     .navbar .nav-link:hover {
       color: #EF4444 !important;
     }
+    .navbar .nav-link:hover,
+    .dropdown-menu .dropdown-item:hover {
+      color: #EF4444 !important;
+      background-color: transparent;
+    }
 
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      border: none;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: white !important;
+    }
     .about-section {
       display: flex;
       flex-wrap: wrap;
