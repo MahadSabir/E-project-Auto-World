@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoWorld</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="font.css">
+  <script src="scroll.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    .cayman-hero {
+      padding: 50px 0;
+    }
+
+    .cayman-img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+    .thumbnail-gallery {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .thumbnail-gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .thumbnail-gallery img:hover {
+      border-color: #EF4444;
+    }
+
+    .cayman-info h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    .specs ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .specs li {
+      padding: 5px 0;
+    }
+
+    .btn-scroll {
+      margin-top: 20px;
+    }
+
+    .dealerships {
+      background: #f9f9f9;
+      padding: 40px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+     <!-- loader -->
+  <div class="loader-wrapper" id="loader">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="Auto_logo-removebg-preview.png" alt="logo"
+          style="height: 60px; width: 70px; margin-left: 30px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Brands
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="brandsDropdown">
+              <li><a class="dropdown-item" href="porsche.html">Porsche</a></li>
+              <li><a class="dropdown-item" href="#">BMW</a></li>
+              <li><a class="dropdown-item" href="#">Audi</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Dealers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Finance</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+
+  <!-- Hero Section -->
+  <div class="container cayman-hero">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <img id="mainImage" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCx3hQDcFG8UpYnfurEUx5yPewymeCvNzxMYHGXoq1kGUr6FObzWswRuT0qVMx7e2HOvq1UzQK6VXbsqYSUzW0iO5Mo%25CvNzxY4FGXVD2UxLODmLRXi97RgTfeIJpV7nDhQS" alt="Porsche 718 Cayman" class="cayman-img">
+        <!-- Thumbnail Images -->
+        <div class="thumbnail-gallery">
+          <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH1spbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCx3hQDcFG8UpYnfurEUx5yPewymeCvNzxMYHGXoq1kGUr6FObzWswRuT0qVMx7e2HOvq1UzQK6VXbsqYSUzW0iO5Mo%25CvNzxY4FGXVD2UxLODmLRXi97RgTfeIJpV7nDhQS" onclick="changeImage(this)">
+          <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMH8spbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCx3hQDcFG8UpYnfurEUx5yPewymeCvNzxMYHGXoq1kGUr6FObzWswRuT0qVMx7e2HOvq1UzQK6VXbsqYSUzW0iO5Mo%25CvNzxY4FGXVD2UxLODmLRXi97RgTfeIJpV7nDhQS" onclick="changeImage(this)">
+          <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHDspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCx3hQDcFG8UpYnfurEUx5yPewymeCvNzxMYHGXoq1kGUr6FObzWswRuT0qVMx7e2HOvq1UzQK6VXbsqYSUzW0iO5Mo%25CvNzxY4FGXVD2UxLODmLRXi97RgTfeIJpV7nDhQS" onclick="changeImage(this)">
+          <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMbjUuWgRcgVGPK0rh4mctLsR6EXdGvdTmJK5MeS1BLMN9nReTbZo4y7z3dkF%25vUqjdTuWXsOWKseV6iTrF5zhRc2wzdqA7fQilDOJUPYcprTBsN5fVc2dioCAphQDcFGdilYnfurRgeV6iTFm7zhp4NdTxf4KxJhnaBJSPvs18kpB%254ZoG" onclick="changeImage(this)">
+          <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMbjAuWgRcgVGPK0rh4mctLsR6EXdGvdTmJK5MeS1BLMN9nReTbZo4y7z3dkF%25vUqjdTuWXsOWKseV6iTrF5zhRc2wzdqA7fQilDOJUPYcprTBsN5fVc2dioCAphQDcFGdilYnfurRgeV6iTFm7zhp4NdTxf4KxJhnaBJSPvs18kpB%254ZoG" onclick="changeImage(this)">
+        </div>
+      </div>
+      <div class="col-md-5 cayman-info">
+        <h1>2025 Porsche 718 Cayman</h1>
+        <p class="price">Starting at $74,795</p>
+        <p>The 718 Cayman combines the spirit of a sports car with everyday usability. Featuring a mid-engine layout, razor-sharp handling, and a turbocharged flat-four engine, it delivers an exhilarating driving experience with unmatched precision.</p>
+        <div class="specs">
+          <ul>
+            <li><strong>Engine:</strong> 2.0L Turbocharged Flat-4</li>
+            <li><strong>Horsepower:</strong> 300 hp</li>
+            <li><strong>0–100 km/h:</strong> 4.9 seconds</li>
+            <li><strong>Top Speed:</strong> 275 km/h</li>
+            <li><strong>Transmission:</strong> 6-speed Manual / Optional PDK</li>
+          </ul>
+        </div>
+        <a href="#dealership" class="btn btn-dark btn-scroll">Find a Dealership</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dealership Section -->
+  <div id="dealership" class="dealerships">
+    <div class="container">
+      <h2 class="section-title">Porsche Dealerships in Pakistan</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h5>Karachi</h5>
+          <p>Porsche Centre Karachi<br>Shahrah-e-Faisal<br><strong>Phone:</strong> +92 21 1234 5678</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Lahore</h5>
+          <p>Porsche Centre Lahore<br>Gulberg III<br><strong>Phone:</strong> +92 42 2345 6789</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Islamabad</h5>
+          <p>Porsche Centre Islamabad<br>G-9 Markaz<br><strong>Phone:</strong> +92 51 3456 7890</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 AutoWorld. All rights reserved.
+  </footer>
+
+
+  <script>
+    function changeImage(img) {
+      document.getElementById("mainImage").src = img.src;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
