@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - AutoWorld</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="font.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="scroll.js"></script>
+  <style>
+   body {
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+
+    }
+
+    .navbar,
+    footer {
+      background-color: #000000;
+    }
+
+    .navbar .nav-link,
+    .navbar .navbar-brand,
+    footer {
+      color: white !important;
+    }
+
+    .navbar .nav-link:hover {
+      color: #EF4444 !important;
+    }
+    .navbar .nav-link:hover,
+    .dropdown-menu .dropdown-item:hover {
+      color: #EF4444 !important;
+      background-color: transparent;
+    }
+
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      border: none;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: white !important;
+    }
+
+    .section-title {
+      font-size: 2.75rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .section-subtext {
+      text-align: center;
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 35px;
+      margin-bottom: 40px;
+      background-color: white;
+    }
+
+    .card h5 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .card p, .card ul {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .form-section {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-red {
+      background-color: #000;
+      color: white;
+      border: none;
+    }
+
+    .btn-red:hover {
+      background-color: #f7f7f7;
+      color: rgb(0, 0, 0);
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 60px; width: 70px; margin-left: 30px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Brands
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="brandsDropdown"
+                  style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); border: none;">
+                  <li><a class="dropdown-item text-white" href="porsche.html">Porsche</a></li>
+                  <li><a class="dropdown-item text-white" href="bmw.html">BMW</a></li>
+                  <li><a class="dropdown-item text-white" href="audi.html">Audi</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="dealer.html">Dealers</a></li>
+              <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <br><br><br><br><br>
+      <!-- loader -->
+      <div class="loader-wrapper" id="loader">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+
+
+
+  <div class="container">
+    <h2 class="section-title">Financing Options</h2>
+    <p class="section-subtext">AutoWorld offers flexible car financing solutions tailored to your needs.</p>
+
+    <!-- Leasing Options -->
+    <div class="card">
+      <h5>Leasing Options</h5>
+      <p>Lease a brand-new car for 2-4 years with affordable monthly payments and the freedom to upgrade regularly.</p>
+      <ul>
+        <li>Lower upfront cost</li>
+        <li>Drive a new vehicle every few years</li>
+        <li>Perfect for short-term needs</li>
+      </ul>
+    </div>
+
+    <!-- Loan Plans -->
+    <div class="card">
+      <h5>Loan Plans</h5>
+      <p>Finance your dream car with our easy, low-interest loan packages that suit your budget and lifestyle.</p>
+      <ul>
+        <li>Flexible repayment terms up to 7 years</li>
+        <li>Competitive interest rates</li>
+        <li>Full vehicle ownership at the end of the term</li>
+      </ul>
+    </div>
+
+    <!-- Trade-In -->
+    <div class="card">
+      <h5>Trade-In Assistance</h5>
+      <p>Turn your current vehicle into value. Get a fair market trade-in offer and apply it directly to your next purchase.</p>
+      <ul>
+        <li>Complimentary vehicle evaluation</li>
+        <li>Instant trade-in value applied toward your new car</li>
+        <li>Quick and stress-free process</li>
+      </ul>
+    </div>
+
+    <!-- Required Documents -->
+    <div class="card">
+      <h5>Required Documents</h5>
+      <p>To apply for any financing plan, please prepare the following documents:</p>
+      <ul>
+        <li>Valid CNIC or Passport</li>
+        <li>Proof of income (last 3 months)</li>
+        <li>Recent bank statement</li>
+        <li>Utility bill (for address verification)</li>
+      </ul>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-section">
+      <h5 class="mb-4">Apply for Financing</h5>
+      <form>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Full Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" placeholder="Email Address" required>
+          </div>
+          <div class="col-md-6">
+            <input type="tel" class="form-control" placeholder="Phone Number" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="City" required>
+          </div>
+          <div class="col-12">
+            <textarea class="form-control" rows="4" placeholder="Your Message or Vehicle Interest"></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-red px-4 py-2 mt-2">Submit Application</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="pt-5 pb-4 mt-5" style="background-color: #000000; color: #ffffff;">
+    <div class="container">
+      <div class="row">
+  
+        <!-- Quick Links on Left -->
+        <div class="col-md-4 mb-4">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
+            <li><a href="about.html" class="text-decoration-none text-light">About</a></li>
+            <li><a href="contact.html" class="text-decoration-none text-light">Contact</a></li>
+            <li><a href="finance.html" class="text-decoration-none text-light">Finance</a></li>
+            <li><a href="dealer.html" class="text-decoration-none text-light">Dealers</a></li>
+            <li><a href="compare.html" class="text-decoration-none text-light">Compare</a></li>
+          </ul>
+        </div>
+  
+        <!-- About AutoWorld in Center -->
+        <div class="col-md-4 mb-4 text-md-center">
+          <h5 class="mb-3">About AutoWorld</h5>
+          <p style="font-size: 0.95rem;">
+            AutoWorld is your trusted destination for premium vehicles including Porsche, BMW, and Audi. 
+            Experience excellence in automotive selection, finance options, and service.
+          </p>
+        </div>
+  
+        <!-- Social Media Icons on Right -->
+        <div class="col-md-4 mb-4 text-md-end text-start">
+          <h5 class="mb-3">Follow Us</h5>
+          <a href="#" class="text-light me-3"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a>
+          <a href="#" class="text-light me-3"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
+          <a href="#" class="text-light me-3"><i class="bi bi-twitter-x" style="font-size: 1.5rem;"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube" style="font-size: 1.5rem;"></i></a>
+        </div>
+  
+      </div>
+  
+      <hr class="text-secondary" />
+      <div class="text-center">
+        <p class="mb-0" style="font-size: 0.9rem;">&copy; 2025 AutoWorld. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

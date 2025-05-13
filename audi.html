@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoWorld - Audi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="font.css" />
+  <script src="scroll.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-subtext {
+      font-size: 1.1rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .navbar {
+      background-color: #000;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+      color: white;
+    }
+
+    .navbar .nav-link:hover,
+    .dropdown-menu .dropdown-item:hover {
+      color: #EF4444;
+      background-color: transparent;
+    }
+
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      border: none;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: white;
+    }
+
+    .btn-red {
+      background-color: #000;
+      color: white;
+      border: none;
+    }
+
+    .btn-red:hover {
+      background-color: #f0eeee;
+      color: black;
+    }
+
+    .card-custom {
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.2s;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader-wrapper" id="loader">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 60px; width: 70px; margin-left: 30px;" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Brands</a>
+            <ul class="dropdown-menu" aria-labelledby="brandsDropdown">
+              <li><a class="dropdown-item" href="porsche.html">Porsche</a></li>
+              <li><a class="dropdown-item" href="bmw.html">BMW</a></li>
+              <li><a class="dropdown-item" href="audi.html">Audi</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="dealer.html">Dealers</a></li>
+          <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
+
+  <!-- Video Section -->
+  <section class="mb-5">
+    <video autoplay muted loop playsinline style="width: 100%;">
+      <source src="audi2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Overview -->
+  <section class="container text-center mb-5">
+    <img src="audi-logo.jpg" alt="Audi logo" style="height: 150px; width: 150px;"> <br>
+    <h2 class="section-title">Audi</h2>
+    <p class="section-subtext">
+      Audi is a symbol of progressive luxury and technological excellence. Known for its Quattro all-wheel drive, sleek design, and cutting-edge interiors, Audi offers a range of models from high-performance sedans to futuristic electric vehicles. Whether it’s the refined A6, the powerful RS lineup, or the all-electric e-tron, Audi makes every journey inspiring.
+    </p>
+  </section>
+
+  <hr>
+
+  <section class="container mb-5">
+    <h3 class="text-center mb-4">Top Audi Models</h3>
+    <div class="row g-3">
+
+      <!-- Audi A6 -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://cache2.pakwheels.com/system/car_generation_pictures/6393/original/Audi_A6_Front.jpg?1650612528" class="card-img-top" alt="Audi A6">
+          <div class="card-body">
+            <h5 class="card-title">Audi A6</h5>
+            <p class="card-text">Elegant executive sedan with cutting-edge technology and refined performance.</p>
+            <a href="#" class="btn btn-red">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audi Q7 -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://cache1.pakwheels.com/system/car_generation_pictures/3000/original/Audi_Q7_2005.jpg?1444118304" class="card-img-top" alt="Audi Q7">
+          <div class="card-body">
+            <h5 class="card-title">Audi Q7</h5>
+            <p class="card-text">Luxury SUV with space, power, and next-level digital cockpit experience.</p>
+            <a href="#" class="btn btn-red">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audi RS5 -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://cache1.pakwheels.com/system/car_generation_pictures/7545/original/S5-cover.jpg?1693989993" class="card-img-top" alt="Audi RS5">
+          <div class="card-body">
+            <h5 class="card-title">Audi RS5</h5>
+            <p class="card-text">High-performance coupe combining style and exhilarating power.</p>
+            <a href="#" class="btn btn-red">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audi e-tron -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://cache4.pakwheels.com/system/car_generation_pictures/5519/original/audi-gt-etron.jpg?1626680748" class="card-img-top" alt="Audi e-tron">
+          <div class="card-body">
+            <h5 class="card-title">Audi e-tron</h5>
+            <p class="card-text">Audi’s fully electric SUV, delivering silent speed and eco-friendly luxury.</p>
+            <a href="#" class="btn btn-red">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audi A3 -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://cache1.pakwheels.com/system/car_generation_pictures/5683/original/61f9b21c0de14e30a4d7ae577e8cb4dc.jpg?1631515853" class="card-img-top" alt="Audi A3">
+          <div class="card-body">
+            <h5 class="card-title">Audi A3</h5>
+            <p class="card-text">Compact luxury sedan perfect for city life with premium flair.</p>
+            <a href="#" class="btn btn-red">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audi R8 -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow">
+          <img src="https://cache4.pakwheels.com/system/car_generation_pictures/2479/original/1%286%29.jpg?1433331821" class="card-img-top" alt="Audi R8">
+          <div class="card-body">
+            <h5 class="card-title">Audi R8</h5>
+            <p class="card-text">Iconic supercar delivering breathtaking speed and everyday usability.</p>
+            <a href="#" class="btn btn-red">View Details</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-4 mt-5" style="background-color: #000000; color: #ffffff;">
+    <div class="container">
+      <div class="row">
+  
+        <!-- Quick Links on Left -->
+        <div class="col-md-4 mb-4">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
+            <li><a href="about.html" class="text-decoration-none text-light">About</a></li>
+            <li><a href="contact.html" class="text-decoration-none text-light">Contact</a></li>
+            <li><a href="finance.html" class="text-decoration-none text-light">Finance</a></li>
+            <li><a href="dealer.html" class="text-decoration-none text-light">Dealers</a></li>
+            <li><a href="compare.html" class="text-decoration-none text-light">Compare</a></li>
+          </ul>
+        </div>
+  
+        <!-- About AutoWorld in Center -->
+        <div class="col-md-4 mb-4 text-md-center">
+          <h5 class="mb-3">About AutoWorld</h5>
+          <p style="font-size: 0.95rem;">
+            AutoWorld is your trusted destination for premium vehicles including Porsche, BMW, and Audi. 
+            Experience excellence in automotive selection, finance options, and service.
+          </p>
+        </div>
+  
+        <!-- Social Media Icons on Right -->
+        <div class="col-md-4 mb-4 text-md-end text-start">
+          <h5 class="mb-3">Follow Us</h5>
+          <a href="#" class="text-light me-3"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a>
+          <a href="#" class="text-light me-3"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
+          <a href="#" class="text-light me-3"><i class="bi bi-twitter-x" style="font-size: 1.5rem;"></i></a>
+          <a href="#" class="text-light"><i class="bi bi-youtube" style="font-size: 1.5rem;"></i></a>
+        </div>
+  
+      </div>
+  
+      <hr class="text-secondary" />
+      <div class="text-center">
+        <p class="mb-0" style="font-size: 0.9rem;">&copy; 2025 AutoWorld. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
