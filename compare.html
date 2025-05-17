@@ -143,6 +143,52 @@
       padding: 15px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    /* Search Bar Styles */
+    .search-bar {
+      position: relative;
+    }
+
+    .search-input {
+      padding: 6px 15px;
+      border: none;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      width: 150px;
+      transition: width 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      width: 200px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 5px;
+      margin-top: 5px;
+      padding: 10px;
+      list-style: none;
+      display: none;
+      z-index: 9999;
+    }
+
+    .search-results li a {
+      display: block;
+      padding: 5px 0;
+      color: white;
+      text-decoration: none;
+    }
+
+    .search-results li a:hover {
+      color: #EF4444;
+    }
   </style>
 </head>
 <body>
@@ -152,36 +198,58 @@
 </div>
 
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html"><img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 60px; width: 70px; margin-left: 30px;"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    
+    <!-- Logo (left) -->
+    <a class="navbar-brand" href="index.html">
+      <img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 60px; width: 70px; margin-left: 30px;" />
+    </a>
+
+    <!-- Toggler (mobile menu button) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      
+      <!-- Centered Links -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
-        <!-- Blurred Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Brands
           </a>
           <ul class="dropdown-menu" aria-labelledby="brandsDropdown">
-            <li><a class="dropdown-item" href="porsche.html">Porsche</a></li>
-            <li><a class="dropdown-item" href="#">BMW</a></li>
-            <li><a class="dropdown-item" href="#">Audi</a></li>
+            <li><a class="dropdown-item text-white" href="porsche.html">Porsche</a></li>
+            <li><a class="dropdown-item text-white" href="bmw.html">BMW</a></li>
+            <li><a class="dropdown-item text-white" href="audi.html">Audi</a></li>
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link" href="#">Dealers</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Finance</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="dealer.html">Dealers</a></li>
+        <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
+
+      <!-- Search Bar (right) -->
+      <div class="search-bar d-flex">
+        <input 
+          class="form-control search-input" 
+          type="text" 
+          placeholder="Search Brands" 
+          id="searchInput" 
+          oninput="searchBrands()" 
+          onkeydown="handleKey(event)" 
+        />
+        <ul class="search-results" id="searchResults"></ul>
+      </div>
+
     </div>
   </div>
 </nav>
@@ -280,12 +348,12 @@
   <script>
     const carData = {
       audi: [
-        { name: 'Audi A4', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Audi_A4_B9_Limousine_IMG_0334.jpg/640px-Audi_A4_B9_Limousine_IMG_0334.jpg', price: '$40,000', engine: '2.0L Turbo', horsepower: '201 HP', fuel: 'Gasoline' },
-        { name: 'Audi A6', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Audi_A6_Limousine_TDI_quattro_3.0_front.jpg', price: '$55,000', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
-        { name: 'Audi Q5', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Audi_Q5_45_TFSI_quattro_S_line_%28II%2C_Facelift%29_%E2%80%93_f_27082021.jpg/640px-Audi_Q5_45_TFSI_quattro_S_line_%28II%2C_Facelift%29_%E2%80%93_f_27082021.jpg', price: '$43,000', engine: '2.0L Turbo', horsepower: '261 HP', fuel: 'Gasoline' },
-        { name: 'Audi Q7', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Audi_Q7_IMG_0377.jpg/640px-Audi_Q7_IMG_0377.jpg', price: '$60,000', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
-        { name: 'Audi e-tron', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/2019_Audi_e-tron_55_Quattro_300kW.jpg/640px-2019_Audi_e-tron_55_Quattro_300kW.jpg', price: '$65,000', engine: 'Electric', horsepower: '355 HP', fuel: 'Electric' },
-        { name: 'Audi RS7', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Audi_RS7_C8_IMG_3382.jpg/640px-Audi_RS7_C8_IMG_3382.jpg', price: '$120,000', engine: '4.0L V8', horsepower: '591 HP', fuel: 'Gasoline' }
+        { name: 'Audi A3', image: 'https://cache1.pakwheels.com/system/car_generation_pictures/5683/original/61f9b21c0de14e30a4d7ae577e8cb4dc.jpg?1631515853', price: '$34,800', engine: '2.0L Turbo', horsepower: '201 HP', fuel: 'Gasoline' },
+        { name: 'Audi A6', image: 'https://cache2.pakwheels.com/system/car_generation_pictures/6393/original/Audi_A6_Front.jpg?1650612528', price: '$56,995', engine: '2.0L Turbo', horsepower: '261 hp', fuel: 'Gasoline' },
+        { name: 'Audi R8', image: 'https://cache3.pakwheels.com/system/car_generation_pictures/5677/original/CAC70AUC171A021001.jpg?1631513257', price: '$169,900', engine: '5.2L V10', horsepower: '562 HP', fuel: 'Gasoline' },
+        { name: 'Audi Q7', image: 'https://cache3.pakwheels.com/system/car_generation_pictures/2618/original/6.jpg?1440158574', price: '$64,795', engine: '3.0L V6', horsepower: '335 HP', fuel: 'Gasoline' },
+        { name: 'Audi e-tron', image: 'https://cache4.pakwheels.com/system/car_generation_pictures/5519/original/audi-gt-etron.jpg?1626680748', price: '$69,800', engine: 'Electric', horsepower: '402 HP', fuel: 'Electric' },
+        { name: 'Audi RS5', image: 'https://cache1.pakwheels.com/system/car_generation_pictures/7545/original/S5-cover.jpg?1693989993', price: '$75,495', engine: '2.9L V6', horsepower: '444 hp', fuel: 'Gasoline' }
       ],
       bmw: [
         { name: 'BMW 3 Series', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/BMW_G20_IMG_2719.jpg/640px-BMW_G20_IMG_2719.jpg', price: '$42,000', engine: '2.0L Turbo', horsepower: '255 HP', fuel: 'Gasoline' },

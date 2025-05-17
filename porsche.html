@@ -109,6 +109,52 @@
       padding: 15px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    /* Search Bar Styles */
+    .search-bar {
+      position: relative;
+    }
+
+    .search-input {
+      padding: 6px 15px;
+      border: none;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      width: 150px;
+      transition: width 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      width: 200px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 5px;
+      margin-top: 5px;
+      padding: 10px;
+      list-style: none;
+      display: none;
+      z-index: 9999;
+    }
+
+    .search-results li a {
+      display: block;
+      padding: 5px 0;
+      color: white;
+      text-decoration: none;
+    }
+
+    .search-results li a:hover {
+      color: #EF4444;
+    }
   </style>
 </head>
 
@@ -119,41 +165,61 @@
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img src="Auto_logo-removebg-preview.png" alt="logo"
-          style="height: 60px; width: 70px; margin-left: 30px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    
+    <!-- Logo (left) -->
+    <a class="navbar-brand" href="index.html">
+      <img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 60px; width: 70px; margin-left: 30px;" />
+    </a>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <!-- Toggler (mobile menu button) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      
+      <!-- Centered Links -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Brands
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="brandsDropdown">
-              <li><a class="dropdown-item" href="porsche.html">Porsche</a></li>
-              <li><a class="dropdown-item" href="bmw.html">BMW</a></li>
-              <li><a class="dropdown-item" href="audi.html">Audi</a></li>
-            </ul>
-          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Brands
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="brandsDropdown">
+            <li><a class="dropdown-item text-white" href="porsche.html">Porsche</a></li>
+            <li><a class="dropdown-item text-white" href="bmw.html">BMW</a></li>
+            <li><a class="dropdown-item text-white" href="audi.html">Audi</a></li>
+          </ul>
+        </li>
 
-          <li class="nav-item"><a class="nav-link" href="dealer.html">Dealers</a></li>
-          <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+        <li class="nav-item"><a class="nav-link" href="dealer.html">Dealers</a></li>
+        <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Search Bar (right) -->
+      <div class="search-bar d-flex">
+        <input 
+          class="form-control search-input" 
+          type="text" 
+          placeholder="Search Brands" 
+          id="searchInput" 
+          oninput="searchBrands()" 
+          onkeydown="handleKey(event)" 
+        />
+        <ul class="search-results" id="searchResults"></ul>
       </div>
+
     </div>
-  </nav>
+  </div>
+</nav>
   <br>
   <br>
   <br>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoWorld</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="font.css" />
+  <script src="scroll.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 10;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+      color: white !important;
+    }
+
+    .navbar .nav-link:hover,
+    .dropdown-menu .dropdown-item:hover {
+      color: #EF4444 !important;
+      background-color: transparent;
+    }
+
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      border: none;
+    }
+
+    .dropdown-menu .dropdown-item {
+      color: white !important;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      padding: 12px 28px;
+      font-size: 1rem;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      background-color: #ffffff;
+      color: #000;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      color: #ccc;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+    }
+
+    /* Search Bar Styles */
+    .search-bar {
+      position: relative;
+    }
+
+    .search-input {
+      padding: 6px 15px;
+      border: none;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      width: 150px;
+      transition: width 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      width: 200px;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 5px;
+      margin-top: 5px;
+      padding: 10px;
+      list-style: none;
+      display: none;
+      z-index: 9999;
+    }
+
+    .search-results li a {
+      display: block;
+      padding: 5px 0;
+      color: white;
+      text-decoration: none;
+    }
+
+    .search-results li a:hover {
+      color: #EF4444;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    
+    <!-- Logo (left) -->
+    <a class="navbar-brand" href="index.html">
+      <img src="Auto_logo-removebg-preview.png" alt="logo" style="height: 60px; width: 70px; margin-left: 30px;" />
+    </a>
+
+    <!-- Toggler (mobile menu button) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+      
+      <!-- Centered Links -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Brands
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="brandsDropdown">
+            <li><a class="dropdown-item text-white" href="porsche.html">Porsche</a></li>
+            <li><a class="dropdown-item text-white" href="bmw.html">BMW</a></li>
+            <li><a class="dropdown-item text-white" href="audi.html">Audi</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="dealer.html">Dealers</a></li>
+        <li class="nav-item"><a class="nav-link" href="finance.html">Finance</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Search Bar (right) -->
+      <div class="search-bar d-flex">
+        <input 
+          class="form-control search-input" 
+          type="text" 
+          placeholder="Search Brands" 
+          id="searchInput" 
+          oninput="searchBrands()" 
+          onkeydown="handleKey(event)" 
+        />
+        <ul class="search-results" id="searchResults"></ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Loader -->
+  <div class="loader-wrapper" id="loader">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>The Essence of Prestige on Wheels.</h1>
+    <video src="main.mp4" autoplay loop muted></video>
+    <button class="btn" onclick="window.location.href='about.html'">Explore Now</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 AutoWorld. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const brands = [
+      { name: 'Porsche', url: 'porsche.html' },
+      { name: 'BMW', url: 'bmw.html' },
+      { name: 'Audi', url: 'audi.html' }
+    ];
+
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    function searchBrands() {
+      const term = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+
+      if (!term) {
+        searchResults.style.display = 'none';
+        return;
+      }
+
+      const matches = brands.filter(b => b.name.toLowerCase().includes(term));
+
+      if (matches.length > 0) {
+        matches.forEach(brand => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${brand.url}">${brand.name}</a>`;
+          searchResults.appendChild(li);
+        });
+        searchResults.style.display = 'block';
+      } else {
+        searchResults.style.display = 'none';
+      }
+    }
+
+    function handleKey(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const term = searchInput.value.trim().toLowerCase();
+        const match = brands.find(b => b.name.toLowerCase().includes(term));
+        if (match) {
+          window.location.href = match.url;
+        }
+      }
+    }
+
+    document.addEventListener('click', e => {
+      if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+        searchResults.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
