@@ -217,8 +217,12 @@
 
     <!-- Hero Section -->
     <div class="hero position-relative">
-      <video class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" src="main.mp4" autoplay loop
-        muted></video>
+      <video class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" autoplay loop muted playsinline>
+  <source src="main.mp4" type="video/mp4" />
+  <source src="main.webm" type="video/webm" />
+  Your browser does not support the video tag.
+</video>
+
       <div class="position-relative z-1 d-flex flex-column justify-content-center align-items-center text-white"
         style="min-height: 100vh;">
         <h1>The Essence of Prestige on Wheels.</h1>
